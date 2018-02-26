@@ -1,0 +1,17 @@
+package com.angularjsspring.crud.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.angularjsspring.crud.domain.UserFacebookProfile;
+import com.angularjsspring.crud.service.SocialNetworkService;
+import com.angularjsspring.crud.utility.FacebookUtil;
+
+public class SocialNetworkServiceImpl implements SocialNetworkService {
+	
+	@Autowired
+	FacebookUtil facebookUtil;
+	
+	public UserFacebookProfile getFacebookProfile(String loginId) {
+		return facebookUtil.getFacebookUserProfile(loginId);
+	}
+}
