@@ -1,5 +1,7 @@
 package com.angularjsspring.crud.utility;
 
+import javax.inject.Inject;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.social.facebook.api.User;
@@ -12,6 +14,11 @@ public class FacebookUtil {
 	
 	@Autowired
 	private Facebook facebook;
+	
+	@Inject
+    public FacebookUtil(Facebook facebook) {
+        this.facebook = facebook;
+    }
 	
 	public UserFacebookProfile getFacebookUserProfile(String loginId) {
 		
